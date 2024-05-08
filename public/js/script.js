@@ -34,7 +34,7 @@ function formatTime(timeInSeconds) {
   }${seconds}`;
 }
 
-/*Particles animation*/
+/*##############Particles animation##############*/
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".particle-container");
 

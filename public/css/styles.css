@@ -14,22 +14,33 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 300px;
+    margin: 20px;
 }
 
 .input-group, .control-buttons {
     margin-bottom: 15px;
 }
 
-input[type="number"], button {
+input[type="number"], input[type="text"]{
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 10px;
     width: calc(100% - 22px); /* Adjust width for padding and border */
     box-sizing: border-box;
 }
 
 input[type="checkbox"] {
     margin-right: 5px;
+    margin-top: 10px;
 }
+
+button {
+    padding: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+    width: calc(100% - 22px); /* Adjust width for padding and border */
+    box-sizing: border-box;
+}
+    
 
 button {
     width: auto;
