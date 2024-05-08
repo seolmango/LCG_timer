@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer Display</title>
-    <link rel="stylesheet" href="timerStyles.css">
+    <link rel="stylesheet" href="css/timerStyles.css">
 </head>
 <body>
-    <div class="timer-container">
-        <div id="timerDisplay" class="timer-display">00:00</div>
+    <div class="particle-container">
+        <div class="logo-container">
+            <img src="static/tempLSG-white.png" alt="Logo" class="logo">
+        </div>
+        <!-- <div class="timer-container">
+            <div id="timerDisplay" class="timer-display">00:00</div>
+        </div> -->
+        <div class="timer-container">
+            <div class="timer-display">
+                <span id="minutes">00</span><span class="colon">:</span><span id="seconds">00</span>
+            </div>
+        </div>
+        <div class="LCG-title">
+            League of Legends <br>
+            Champions GSA
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <!-- <script src="js/timerparticle.js"></script> -->
 </body>
 </html>
