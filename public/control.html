@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Controller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Timer Setup</h1>
+        <div class="input-group">
+            <label for="minutesInput">Minutes:</label>
+            <input type="number" id="minutesInput" placeholder="0" min="0">
+        </div>
+        <div class="input-group">
+            <label for="secondsInput">Seconds:</label>
+            <input type="number" id="secondsInput" placeholder="0" min="0" max="59">
+        </div>
+        <div class="input-group">
+            <button onclick="setTime()">Set Timer</button>
+            <label>
+                <input type="checkbox" id="startImmediately">
+                Start timer immediately
+            </label>
+        </div>
+        <div class="control-buttons">
+            <button onclick="controlTimer('start')">Start</button>
+            <button onclick="controlTimer('stop')">Stop</button>
+            <button onclick="controlTimer('resume')">Resume</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
