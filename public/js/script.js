@@ -1,14 +1,75 @@
 const host = location.origin.replace(/^http/, "ws");
 const ws = new WebSocket(host);
 
-ws.onmessage = function (event) {
-  const message = JSON.parse(event.data);
-  if (message.action === "update") {
-    const time = formatTime(message.time);
-    document.getElementById("minutes").innerText = time.split(":")[0];
-    document.getElementById("seconds").innerText = time.split(":")[1];
+let displayTitle = true;
+
+// ws.onmessage = function (event) {
+//   const message = JSON.parse(event.data);
+//   console.log("message", message);
+//   switch (message.action) {
+//     case "update":
+//       console.log("hii");
+//       // const time = formatTime(message.time);
+//       // console.log("hi2");
+
+//       // let minutes = document.getElementById("minutes");
+//       // let seconds = document.getElementById("seconds");
+
+//       // if (minutes != null) {
+//       //   minutes.innerText = time.split(":")[0];
+//       //   console.log("hi3");
+//       // }
+//       // if (seconds != null) {
+//       //   seconds.innerText = time.split(":")[1];
+//       //   console.log("hi4");
+//       // }
+//       //   break;
+//       // case "updateTeams":
+//       console.log("hi5");
+//       updateTeamDisplay(message.team1, message.team2);
+//       break;
+//   }
+// };
+
+try {
+  function updateTeamDisplay(team1, team2) {
+    // if (team1 && team2)
+    document.getElementById("team1Name").innerText = team1.name || "N/A";
+    document.getElementById("team1ScoreDisplay").innerText =
+      team1.score.toString() || "0";
+    document.getElementById("team2Name").innerText = team2.name || "N/A";
+    document.getElementById("team2ScoreDisplay").innerText =
+      team2.score.toString() || "0";
+    // }
   }
-};
+} catch (e) {
+  console.log(e);
+}
+
+function applyTeams() {
+  const team1 = {
+    name: document.getElementById("team1Input").value,
+    score: parseInt(document.getElementById("team1Score").value) || 0,
+  };
+  const team2 = {
+    name: document.getElementById("team2Input").value,
+    score: parseInt(document.getElementById("team2Score").value) || 0,
+  };
+  console.log(team1, team2);
+  ws.send(JSON.stringify({ action: "updateTeams", team1, team2 }));
+}
+
+function toggleDisplay() {
+  displayTitle = !displayTitle;
+  document.getElementById("title-container").style.display = displayTitle
+    ? "block"
+    : "none";
+  document.getElementById("team-info-container").style.display = displayTitle
+    ? "none"
+    : "block";
+}
+
+setInterval(toggleDisplay, 5000);
 
 function setTime() {
   const minutes = parseInt(document.getElementById("minutesInput").value) || 0;
@@ -50,11 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
     container.appendChild(particle);
   }
 
-  // Create 50 particles. Increase or decrease this number based on performance and visual preference.
   for (let i = 0; i < 50; i++) {
     createParticle();
   }
 
   // Optionally, create a new particle periodically
-  setInterval(createParticle, 1500);
+  setInterval(createParticle, 2500);
 });

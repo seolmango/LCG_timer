@@ -11,17 +11,24 @@
         <div class="logo-container">
             <img src="static/tempLSG-white.png" alt="Logo" class="logo">
         </div>
-        <!-- <div class="timer-container">
-            <div id="timerDisplay" class="timer-display">00:00</div>
-        </div> -->
         <div class="timer-container">
             <div class="timer-display">
                 <span id="minutes">00</span><span class="colon">:</span><span id="seconds">00</span>
             </div>
         </div>
-        <div class="LCG-title">
-            League of Legends <br>
-            Champions GSA
+        <div id="title-container" class="info-container">
+            <div class="LCG-title">
+                League of Legends <br>
+                Champions GSA
+            </div>
+        </div>
+        <div id="team-info-container" class="info-container" style="display: none;">
+            <div class="team-info">
+                <div id="team1Name" class="team-name">Team1</div>
+                <div id="team1ScoreDisplay" class="team-score">0</div>
+                <div id="team2Name" class="team-name">Team2</div>
+                <div id="team2ScoreDisplay" class="team-score">0</div>
+            </div>
         </div>
     </div>
     <script src="js/script.js"></script>

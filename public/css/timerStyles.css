@@ -1,6 +1,7 @@
 /*
 font cite
 Pangram Pangram Foundary - Monument Extended
+Power Type™ Foundry - Yapari
 */
 
 @font-face {
@@ -8,10 +9,21 @@ Pangram Pangram Foundary - Monument Extended
     src: url("../font/PPMonumentExtended-Black.otf");
 }
 
+@font-face {
+    font-family: 'Yapari';
+    src: url('../font/Yapari-Variable-Trial-VF.woff2') format('woff2-variations');
+    /* font-weight: 900; */
+}
+
+@font-face {
+    font-family: 'Chaney';
+    src: url('../font/chaney-ultraextended.otf');
+}
+
 body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
     background-color: #101010;
 }
 
@@ -25,7 +37,6 @@ body, html {
     height: auto;
 }
 
-
 .timer-container {
     display: flex;
     justify-content: center;
@@ -36,7 +47,7 @@ body, html {
 
 .timer-display {
     font-family: "Monument Extended Black";
-    font-size: 15em;
+    font-size: 17em;
     color: #f5f5f5;
     letter-spacing: 3px;
     display: flex;
@@ -51,13 +62,15 @@ body, html {
 }
 
 .colon {
-    margin: 0 0.1em;
+    margin: 0 0.08em;
 }
 
 .LCG-title {
-    margin: 20px;
     font-family: "Monument Extended Black";
-    font-size: 3em;
+    /* font-family: 'Chaney'; */
+    margin: 20px;
+    margin-bottom: 40px;
+    font-size: 4em;
     color: #f5f5f5;
     letter-spacing: 3px;
     display: flex;
@@ -67,7 +80,22 @@ body, html {
 }
 
 
+.team-info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.team-name, .team-score {
+    color: #f5f5f5;
+    font-family: "Monument Extended Black";
+    font-size: 2em;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+
 /*#####################background animation#####################*/
+/*
 .animated-background {
     position: fixed;
     top: 0;
@@ -101,6 +129,7 @@ body, html {
         background-position: 0% 50%, 50% 100%, 100% 50%, 50% 0%, 0% 50%;
     };
 }
+*/
 
 .particle-container {
     position: relative;
