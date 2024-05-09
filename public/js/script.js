@@ -3,47 +3,32 @@ const ws = new WebSocket(host);
 
 let displayTitle = true;
 
-// ws.onmessage = function (event) {
-//   const message = JSON.parse(event.data);
-//   console.log("message", message);
-//   switch (message.action) {
-//     case "update":
-//       console.log("hii");
-//       // const time = formatTime(message.time);
-//       // console.log("hi2");
-
-//       // let minutes = document.getElementById("minutes");
-//       // let seconds = document.getElementById("seconds");
-
-//       // if (minutes != null) {
-//       //   minutes.innerText = time.split(":")[0];
-//       //   console.log("hi3");
-//       // }
-//       // if (seconds != null) {
-//       //   seconds.innerText = time.split(":")[1];
-//       //   console.log("hi4");
-//       // }
-//       //   break;
-//       // case "updateTeams":
-//       console.log("hi5");
-//       updateTeamDisplay(message.team1, message.team2);
-//       break;
-//   }
-// };
-
-try {
-  function updateTeamDisplay(team1, team2) {
-    // if (team1 && team2)
-    document.getElementById("team1Name").innerText = team1.name || "N/A";
-    document.getElementById("team1ScoreDisplay").innerText =
-      team1.score.toString() || "0";
-    document.getElementById("team2Name").innerText = team2.name || "N/A";
-    document.getElementById("team2ScoreDisplay").innerText =
-      team2.score.toString() || "0";
-    // }
+ws.onmessage = function (event) {
+  const data = JSON.parse(event.data);
+  switch (data.action) {
+    case "update":
+      document.getElementById("minutes").innerText = formatTime(
+        data.time
+      ).split(":")[0];
+      document.getElementById("seconds").innerText = formatTime(
+        data.time
+      ).split(":")[1];
+      break;
+    case "updateTeams":
+      updateTeamDisplay(data.team1, data.team2);
+      break;
   }
-} catch (e) {
-  console.log(e);
+};
+
+function updateTeamDisplay(team1, team2) {
+  // if (team1 && team2)
+  document.getElementById("team1Name").innerText = team1.name || "TBD";
+  document.getElementById("team1ScoreDisplay").innerText =
+    team1.score.toString() || "0";
+  document.getElementById("team2Name").innerText = team2.name || "TBD";
+  document.getElementById("team2ScoreDisplay").innerText =
+    team2.score.toString() || "0";
+  // }
 }
 
 function applyTeams() {
@@ -55,7 +40,7 @@ function applyTeams() {
     name: document.getElementById("team2Input").value,
     score: parseInt(document.getElementById("team2Score").value) || 0,
   };
-  console.log(team1, team2);
+
   ws.send(JSON.stringify({ action: "updateTeams", team1, team2 }));
 }
 

@@ -17,7 +17,7 @@ Power Type™ Foundry - Yapari
 
 @font-face {
     font-family: 'Chaney';
-    src: url('../font/chaney-ultraextended.otf');
+    src: url('../font/chaney-ultraextended.otf'); 
 }
 
 body, html {
