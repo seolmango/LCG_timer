@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Animated Text Over Image</title>
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    canvas {
-        width: 100vw;
-        height: 100vh;
-        display: block; /* Removes bottom margin/gap */
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="css/transition.css">
 </head>
 <body>
-<canvas id="canvas"></canvas>
-<script src="js/transition.js"></script>
+    <div class="marquee">
+        <h1>&nbsp;League of Legends Champions GSA League of Legends Champions GSA League of Legends Champions GSA</h1>
+    </div>
+    <div class="content">
+        <span class="static-text left">LCG</span>
+        <div class="logo-center">
+            <img src="static/tempLSG-white.png" alt="Logo" class="logo">
+        </div>
+        <span class="static-text right">24</span>
+    </div>
+    <div class="marquee marquee-reverse">
+        <h1>&nbsp;League of Legends Champions GSA League of Legends Champions GSA League of Legends Champions GSAA</h1>
+    </div>
 </body>
 </html>
