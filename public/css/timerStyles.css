@@ -83,6 +83,24 @@ body, html {
     letter-spacing: 2px;
 }
 
+.production-logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.production-logo {
+    width: auto;
+    height: 30px;
+    margin: 0 20px;
+}
+
+
+
 /*#####################background animation#####################*/
 
 .particle-container {
