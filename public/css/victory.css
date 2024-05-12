@@ -1,17 +1,123 @@
 @font-face {
-    font-family: 'Monument Extended Black';
-    src: url("../font/PPMonumentExtended-Black.otf");
+  font-family: "Monument Extended Black";
+  src: url("../font/PPMonumentExtended-Black.otf");
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-family: "Monument Extended Black";
+}
+
+h1 {
+  margin: 0;
+}
+
+.marquee {
+  position: fixed;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 40px;
+  width: 100%;
+  font-size: 2.5em;
+  margin: 0;
+  transform: rotate(8deg);
+  background-color: black;
+}
+
+.marquee h1 {
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-reverse {
+  top: auto;
+  bottom: 40px;
+}
+
+.marquee-reverse h1 {
+  display: inline-block;
+  animation-direction: reverse;
+}
+
+.marquee-white {
+  color: black;
+  background-color: white;
+}
+
+.top {
+  left: 20px;
+  right: auto;
+}
+
+.bottom {
+  left: auto;
+  right: 20px;
+}
+
+.white-top {
+  top: -100px;
+  bottom: auto;
+  left: 50px;
+  right: auto;
+}
+
+.white-bottom {
+  top: auto;
+  bottom: -100px;
+  left: auto;
+  right: 50px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
   }
-  
-  body, html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    font-family: 'Monument Extended Black';
+  to {
+    transform: translateX(-50%);
   }
-  
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.static-text {
+  font-size: 6em;
+  flex: 1;
+  text-align: center;
+}
+
+.left {
+  text-align: right;
+  padding-right: 80px;
+}
+
+.right {
+  text-align: left;
+  padding-left: 80px;
+}
+
+.logo-center {
+  flex: 0 1 auto;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+}
