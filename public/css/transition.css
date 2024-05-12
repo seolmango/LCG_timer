@@ -1,9 +1,10 @@
 @font-face {
-  font-family: 'Monument Extended Black';
+  font-family: "Monument Extended Black";
   src: url("../font/PPMonumentExtended-Black.otf");
 }
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -12,7 +13,7 @@ body, html {
   justify-content: center;
   background-color: black;
   color: white;
-  font-family: 'Monument Extended Black';
+  font-family: "Monument Extended Black";
 }
 
 .marquee {
@@ -43,8 +44,12 @@ body, html {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .content {

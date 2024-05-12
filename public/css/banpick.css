@@ -95,25 +95,25 @@ html {
   margin-left: -25%;
 }
 .line:nth-child(1)::after {
-  animation-delay: 2s;
+  animation-delay: 2.4s;
 }
 .line:nth-child(3) {
   margin-left: 25%;
 }
 .line:nth-child(3)::after {
-  animation-delay: 2.5s;
+  animation-delay: 2.7s;
 }
 .line:nth-child(4) {
   margin-left: 50%;
 }
 .line:nth-child(4)::after {
-  animation-delay: 1.8s;
+  animation-delay: 1.6s;
 }
 .line:nth-child(5) {
   margin-left: -50%;
 }
 .line:nth-child(5)::after {
-  animation-delay: 2.9s;
+  animation-delay: 3.7s;
 }
 
 @keyframes drop {
