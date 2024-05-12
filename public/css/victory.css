@@ -53,6 +53,14 @@ h1 {
   background-color: white;
 }
 
+.marquee-white h1 {
+  animation: marquee 34s linear infinite;
+}
+
+.white-top h1 {
+  animation-direction: reverse;
+}
+
 .top {
   left: 20px;
   right: auto;

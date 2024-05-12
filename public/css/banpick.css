@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Monument Extended Black";
+  src: url("../font/PPMonumentExtended-Black.otf");
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-family: "Monument Extended Black";
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+}
+
+.static-text {
+  font-size: 6em;
+  flex: 1;
+  text-align: center;
+}
+
+.left {
+  text-align: right;
+  padding-right: 80px;
+}
+
+.right {
+  text-align: left;
+  padding-left: 80px;
+}
+
+.logo-center {
+  flex: 0 1 auto;
+}
+
+.logo {
+  width: 240px;
+  height: auto;
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+
+.line {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: -20%;
+  left: 50%;
+  /* background: rgba(255, 255, 255, 0.4); */
+  overflow: hidden;
+  transform: rotate(60deg);
+}
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+.line:nth-child(1) {
+  margin-left: -25%;
+}
+.line:nth-child(1)::after {
+  animation-delay: 2s;
+}
+.line:nth-child(3) {
+  margin-left: 25%;
+}
+.line:nth-child(3)::after {
+  animation-delay: 2.5s;
+}
+.line:nth-child(4) {
+  margin-left: 50%;
+}
+.line:nth-child(4)::after {
+  animation-delay: 1.8s;
+}
+.line:nth-child(5) {
+  margin-left: -50%;
+}
+.line:nth-child(5)::after {
+  animation-delay: 2.9s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
