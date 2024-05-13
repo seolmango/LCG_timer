@@ -19,9 +19,9 @@ html {
 .content {
   display: flex;
   justify-content: space-between;
-  align-items: last baseline;
+  align-items: end;
   position: absolute;
-  top: 36%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
