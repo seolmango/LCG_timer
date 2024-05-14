@@ -75,14 +75,22 @@ html {
 
 .team-name {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
-  color: #f5f5f5;
+  color: #fff;
   font-family: "Monument Extended Black";
   font-size: 4em;
   letter-spacing: 2px;
   box-sizing: border-box;
+  text-align: center;
+}
+
+.team-logo {
+  width: 280px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 /* Adjustments to bring names closer to the center */

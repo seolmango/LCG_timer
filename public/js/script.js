@@ -14,35 +14,35 @@ ws.onmessage = function (event) {
         data.time
       ).split(":")[1];
       break;
-    case "updateTeams":
-      updateTeamDisplay(data.team1, data.team2);
-      break;
+    // case "updateTeams":
+    //   updateTeamDisplay(data.team1, data.team2);
+    //   break;
   }
 };
 
-function updateTeamDisplay(team1, team2) {
-  // if (team1 && team2)
-  document.getElementById("team1Name").innerText = team1.name || "TBD";
-  // document.getElementById("team1ScoreDisplay").innerText =
-  //   team1.score.toString() || "0";
-  document.getElementById("team2Name").innerText = team2.name || "TBD";
-  // document.getElementById("team2ScoreDisplay").innerText =
-  //   team2.score.toString() || "0";
-  // }
-}
+// function updateTeamDisplay(team1, team2) {
+//   // if (team1 && team2)
+//   document.getElementById("team1Name").innerText = team1.name || "TBD";
+//   // document.getElementById("team1ScoreDisplay").innerText =
+//   //   team1.score.toString() || "0";
+//   document.getElementById("team2Name").innerText = team2.name || "TBD";
+//   // document.getElementById("team2ScoreDisplay").innerText =
+//   //   team2.score.toString() || "0";
+//   // }
+// }
 
-function applyTeams() {
-  const team1 = {
-    name: document.getElementById("team1Input").value,
-    // score: parseInt(document.getElementById("team1Score").value) || 0,
-  };
-  const team2 = {
-    name: document.getElementById("team2Input").value,
-    // score: parseInt(document.getElementById("team2Score").value) || 0,
-  };
+// function applyTeams() {
+//   const team1 = {
+//     name: document.getElementById("team1Input").value,
+//     // score: parseInt(document.getElementById("team1Score").value) || 0,
+//   };
+//   const team2 = {
+//     name: document.getElementById("team2Input").value,
+//     // score: parseInt(document.getElementById("team2Score").value) || 0,
+//   };
 
-  ws.send(JSON.stringify({ action: "updateTeams", team1, team2 }));
-}
+//   ws.send(JSON.stringify({ action: "updateTeams", team1, team2 }));
+// }
 
 function toggleDisplay() {
   displayTitle = !displayTitle;
@@ -54,7 +54,7 @@ function toggleDisplay() {
     : "block";
 }
 
-setInterval(toggleDisplay, 2000);
+setInterval(toggleDisplay, 20000);
 
 function setTime() {
   const minutes = parseInt(document.getElementById("minutesInput").value) || 0;
