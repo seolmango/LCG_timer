@@ -54,7 +54,7 @@ function toggleDisplay() {
     : "block";
 }
 
-setInterval(toggleDisplay, 20000);
+setInterval(toggleDisplay, 2000);
 
 function setTime() {
   const minutes = parseInt(document.getElementById("minutesInput").value) || 0;
