@@ -7,7 +7,7 @@ function showNextImage() {
   images[currentIndex].classList.add("active");
 }
 
-setInterval(showNextImage, 42000); // 42 seconds interval
+setInterval(showNextImage, 15000);
 
 // Initialize the first image
 images[currentIndex].classList.add("active");

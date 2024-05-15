@@ -8,6 +8,11 @@ const wss = new WebSocket.Server({ server });
 
 app.use(express.static("public"));
 
+app.use((req, res, next) => {
+  res.setHeader("ngrok-skip-browser-warning", "true");
+  next();
+});
+
 let timer = { time: 0, interval: null };
 
 function broadcast(data) {
@@ -34,13 +39,13 @@ wss.on("connection", function connection(ws) {
       case "stop":
         clearInterval(timer.interval);
         break;
-      case "updateTeams":
-        broadcast({
-          action: "updateTeams",
-          team1: data.team1,
-          team2: data.team2,
-        });
-        break;
+      // case "updateTeams":
+      //   broadcast({
+      //     action: "updateTeams",
+      //     team1: data.team1,
+      //     team2: data.team2,
+      //   });
+      //   break;
     }
   });
 });
